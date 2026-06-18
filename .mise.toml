@@ -1,0 +1,27 @@
+[tools]
+node = "24.16.0"
+
+[hooks]
+# Enable corepack on install so the pnpm version pinned in package.json
+# ("packageManager") is used instead of any globally installed pnpm.
+postinstall = "corepack enable && corepack install"
+
+[tasks.lint]
+description = "Lint all packages"
+run = "pnpm lint"
+
+[tasks.test]
+description = "Run all package tests"
+run = "pnpm test"
+
+[tasks.format]
+description = "Format the repository"
+run = "pnpm format"
+
+[tasks."format:check"]
+description = "Check formatting"
+run = "pnpm format:check"
+
+[tasks.changeset]
+description = "Create a changeset"
+run = "pnpm changeset"

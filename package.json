@@ -1,0 +1,30 @@
+{
+  "name": "@andrewmcodes/js-configs",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Monorepo for Andrew Mason's shareable JavaScript and Node.js tooling configuration packages.",
+  "license": "MIT",
+  "author": "Andrew Mason",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewmcodes/js-configs.git"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "packageManager": "pnpm@11.7.0",
+  "scripts": {
+    "lint": "pnpm -r --if-present lint",
+    "test": "pnpm -r --if-present test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "catalog:",
+    "prettier": "catalog:"
+  }
+}
