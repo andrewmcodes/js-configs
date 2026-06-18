@@ -1,0 +1,41 @@
+{
+  "name": "@andrewmcodes/commitlint-config",
+  "version": "0.1.2",
+  "description": "Personal commitlint config for @andrewmcodes",
+  "license": "MIT",
+  "author": "Andrew Mason (https://andrewm.codes)",
+  "homepage": "https://github.com/andrewmcodes/js-configs/tree/main/packages/commitlint-config#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewmcodes/js-configs.git",
+    "directory": "packages/commitlint-config"
+  },
+  "bugs": "https://github.com/andrewmcodes/js-configs/issues",
+  "main": "src/index.js",
+  "files": [
+    "src/index.js",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "keywords": [
+    "andrewmcodes",
+    "commitlint",
+    "commitlint-config",
+    "config"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@commitlint/config-conventional": "catalog:"
+  },
+  "devDependencies": {
+    "@commitlint/lint": "catalog:",
+    "@commitlint/load": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
