@@ -24,6 +24,7 @@
     "release": "changeset publish"
   },
   "devDependencies": {
+    "@andrewmcodes/prettier-config": "workspace:*",
     "@changesets/cli": "catalog:",
     "prettier": "catalog:"
   }

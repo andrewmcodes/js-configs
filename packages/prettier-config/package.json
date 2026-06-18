@@ -1,0 +1,35 @@
+{
+  "name": "@andrewmcodes/prettier-config",
+  "version": "2.0.0",
+  "description": "Personal Prettier config for @andrewmcodes",
+  "license": "MIT",
+  "author": "Andrew Mason (https://andrewm.codes)",
+  "homepage": "https://github.com/andrewmcodes/js-configs/tree/main/packages/prettier-config#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewmcodes/js-configs.git",
+    "directory": "packages/prettier-config"
+  },
+  "bugs": "https://github.com/andrewmcodes/js-configs/issues",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "prettier.config.js",
+    "CHANGELOG.md"
+  ],
+  "keywords": [
+    "andrewmcodes",
+    "config",
+    "prettier",
+    "prettier-config"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "prettier": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

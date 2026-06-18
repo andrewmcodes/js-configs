@@ -4,5 +4,6 @@ packages:
 catalog:
   "@changesets/cli": ^2
   prettier: ^3
-  "@commitlint/cli": ^19
-  "@commitlint/config-conventional": ^19
+  "@commitlint/config-conventional": ^21
+  "@commitlint/lint": ^21
+  "@commitlint/load": ^21
