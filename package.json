@@ -19,13 +19,16 @@
     "test": "pnpm -r --if-present test",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "commitlint": "commitlint",
     "changeset": "changeset",
     "version": "changeset version",
     "release": "changeset publish"
   },
   "devDependencies": {
+    "@andrewmcodes/commitlint-config": "workspace:*",
     "@andrewmcodes/prettier-config": "workspace:*",
     "@changesets/cli": "catalog:",
+    "@commitlint/cli": "catalog:",
     "prettier": "catalog:"
   }
 }
