@@ -1,0 +1,35 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":semanticCommits",
+    ":semanticCommitTypeAll(chore)",
+    "schedule:weekly"
+  ],
+  "lockFileMaintenance": {
+    "enabled": true
+  },
+  "packageRules": [
+    {
+      "description": "Group GitHub Actions updates",
+      "matchManagers": ["github-actions"],
+      "groupName": "github-actions"
+    },
+    {
+      "description": "Keep the pinned pnpm version (packageManager) up to date",
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["packageManager"],
+      "groupName": "pnpm"
+    },
+    {
+      "description": "Group Changesets updates",
+      "matchPackageNames": ["@changesets/cli", "changesets/action"],
+      "groupName": "changesets"
+    },
+    {
+      "description": "Group commitlint updates across the pnpm catalog",
+      "matchPackageNames": ["/^@commitlint//"],
+      "groupName": "commitlint"
+    }
+  ]
+}
