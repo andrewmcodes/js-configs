@@ -3,6 +3,7 @@ tmp
 dist
 coverage
 pnpm-lock.yaml
+.claude
 
 # Changelogs are generated/updated by Changesets; let them update without
 # failing the formatting check.

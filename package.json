@@ -29,6 +29,7 @@
     "@andrewmcodes/prettier-config": "workspace:*",
     "@changesets/cli": "catalog:",
     "@commitlint/cli": "catalog:",
+    "@types/node": "catalog:",
     "prettier": "catalog:"
   }
 }
