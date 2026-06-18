@@ -6,9 +6,9 @@ This is a lightweight [pnpm workspace](https://pnpm.io/workspaces) monorepo. Eac
 
 ## Packages
 
-| Package | Description |
-| --- | --- |
-| [`@andrewmcodes/prettier-config`](./packages/prettier-config) | Shareable [Prettier](https://prettier.io/) configuration. |
+| Package                                                           | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| [`@andrewmcodes/prettier-config`](./packages/prettier-config)     | Shareable [Prettier](https://prettier.io/) configuration.         |
 | [`@andrewmcodes/commitlint-config`](./packages/commitlint-config) | Shareable [commitlint](https://commitlint.js.org/) configuration. |
 
 ## Development
