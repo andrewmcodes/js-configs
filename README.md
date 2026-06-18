@@ -5,6 +5,7 @@
 </p>
 
 <p align="center">
+  <a href="https://andrewmcodes.github.io/js-configs/"><img src="https://img.shields.io/badge/docs-website-176de3.svg" alt="Documentation" /></a>
   <a href="https://github.com/andrewmcodes/js-configs/actions/workflows/ci.yml"><img src="https://github.com/andrewmcodes/js-configs/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
   <a href="https://www.npmjs.com/package/@andrewmcodes/prettier-config"><img src="https://img.shields.io/npm/v/@andrewmcodes/prettier-config?label=%40andrewmcodes%2Fprettier-config" alt="@andrewmcodes/prettier-config on npm" /></a>
   <a href="https://www.npmjs.com/package/@andrewmcodes/commitlint-config"><img src="https://img.shields.io/npm/v/@andrewmcodes/commitlint-config?label=%40andrewmcodes%2Fcommitlint-config" alt="@andrewmcodes/commitlint-config on npm" /></a>

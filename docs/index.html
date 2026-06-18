@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>js-configs — shareable JavaScript & Node.js tooling configs</title>
+    <meta
+      name="description"
+      content="Shareable JavaScript and Node.js tooling configuration packages by Andrew Mason: @andrewmcodes/prettier-config and @andrewmcodes/commitlint-config."
+    />
+    <meta property="og:title" content="js-configs" />
+    <meta property="og:description" content="Shareable JavaScript and Node.js tooling configuration packages." />
+    <meta property="og:image" content="assets/social-image.png" />
+    <meta property="og:type" content="website" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>⚙️</text></svg>"
+    />
+    <style>
+      :root {
+        --bg: #ffffff;
+        --fg: #1b1f24;
+        --muted: #5b6470;
+        --border: #e3e8ef;
+        --card: #f7f9fc;
+        --accent: #176de3;
+        --code-bg: #0d1117;
+        --code-fg: #e6edf3;
+        --radius: 12px;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0d1117;
+          --fg: #e6edf3;
+          --muted: #9aa4b2;
+          --border: #232b36;
+          --card: #161b22;
+          --accent: #4d9bff;
+          --code-bg: #010409;
+          --code-fg: #e6edf3;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font-family:
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+        line-height: 1.6;
+      }
+      .wrap {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 0 20px 80px;
+      }
+      header {
+        text-align: center;
+        padding: 56px 0 8px;
+      }
+      header img {
+        max-width: 100%;
+        height: auto;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+      }
+      h1 {
+        font-size: 2.4rem;
+        margin: 28px 0 8px;
+        letter-spacing: -0.02em;
+      }
+      .tagline {
+        color: var(--muted);
+        font-size: 1.1rem;
+        margin: 0 auto 20px;
+        max-width: 620px;
+      }
+      .links {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 12px;
+      }
+      .links a {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 14px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        color: var(--fg);
+        text-decoration: none;
+        font-size: 0.92rem;
+        background: var(--card);
+        transition: border-color 0.15s ease;
+      }
+      .links a:hover {
+        border-color: var(--accent);
+      }
+      h2 {
+        font-size: 1.5rem;
+        margin: 48px 0 6px;
+        letter-spacing: -0.01em;
+      }
+      a {
+        color: var(--accent);
+      }
+      .cards {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 1fr;
+      }
+      @media (min-width: 680px) {
+        .cards {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      .card {
+        border: 1px solid var(--border);
+        background: var(--card);
+        border-radius: var(--radius);
+        padding: 22px;
+      }
+      .card h3 {
+        margin: 0 0 4px;
+        font-size: 1.05rem;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+      .card p {
+        color: var(--muted);
+        margin: 0 0 16px;
+        font-size: 0.95rem;
+      }
+      .badge {
+        display: inline-block;
+        margin-bottom: 14px;
+      }
+      h4 {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--muted);
+        margin: 18px 0 6px;
+      }
+      pre {
+        background: var(--code-bg);
+        color: var(--code-fg);
+        padding: 14px 16px;
+        border-radius: 10px;
+        overflow-x: auto;
+        margin: 0;
+        font-size: 0.86rem;
+      }
+      code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+      p code {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 1px 6px;
+        font-size: 0.88em;
+      }
+      footer {
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.9rem;
+        margin-top: 64px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <img src="assets/social-image.png" alt="js-configs" />
+        <h1>js-configs</h1>
+        <p class="tagline">
+          Shareable JavaScript and Node.js tooling configuration packages by
+          <a href="https://github.com/andrewmcodes">Andrew Mason</a>. A lightweight pnpm + Changesets monorepo.
+        </p>
+        <div class="links">
+          <a href="https://github.com/andrewmcodes/js-configs">GitHub</a>
+          <a href="https://www.npmjs.com/org/andrewmcodes">npm</a>
+          <a href="https://github.com/andrewmcodes/js-configs/blob/main/AGENTS.md">Repo rules</a>
+        </div>
+      </header>
+
+      <main>
+        <h2>Packages</h2>
+        <div class="cards">
+          <section class="card">
+            <h3>@andrewmcodes/prettier-config</h3>
+            <a class="badge" href="https://www.npmjs.com/package/@andrewmcodes/prettier-config"
+              ><img src="https://img.shields.io/npm/v/@andrewmcodes/prettier-config?label=npm" alt="npm version"
+            /></a>
+            <p>
+              A shareable <a href="https://prettier.io/">Prettier</a> configuration (<code>printWidth: 120</code>,
+              <code>endOfLine: "auto"</code>). Compatible with Prettier 3.
+            </p>
+            <h4>Install</h4>
+            <pre><code>pnpm add -D @andrewmcodes/prettier-config</code></pre>
+            <h4>Usage</h4>
+            <p>Reference it from your <code>package.json</code>:</p>
+            <pre><code>"prettier": "@andrewmcodes/prettier-config"</code></pre>
+          </section>
+
+          <section class="card">
+            <h3>@andrewmcodes/commitlint-config</h3>
+            <a class="badge" href="https://www.npmjs.com/package/@andrewmcodes/commitlint-config"
+              ><img src="https://img.shields.io/npm/v/@andrewmcodes/commitlint-config?label=npm" alt="npm version"
+            /></a>
+            <p>
+              A shareable <a href="https://commitlint.js.org/">commitlint</a> configuration that extends
+              <code>@commitlint/config-conventional</code> and relaxes body/footer line limits. Requires Node.js ≥
+              22.12.
+            </p>
+            <h4>Install</h4>
+            <pre><code>pnpm add -D @andrewmcodes/commitlint-config @commitlint/cli</code></pre>
+            <h4>Usage</h4>
+            <p>In your <code>commitlint.config.js</code>:</p>
+            <pre><code>export default {
+  extends: ["@andrewmcodes"],
+};</code></pre>
+          </section>
+        </div>
+
+        <h2>Contributing</h2>
+        <p>
+          Changes are released with <a href="https://github.com/changesets/changesets">Changesets</a>
+          and published to npm via
+          <a href="https://docs.npmjs.com/trusted-publishers">Trusted Publishing</a> with provenance. Use
+          <a href="https://www.conventionalcommits.org/">Conventional Commits</a> and include a changeset for any
+          user-facing change. See the <a href="https://github.com/andrewmcodes/js-configs">repository</a> for details.
+        </p>
+      </main>
+
+      <footer>
+        Released under the
+        <a href="https://github.com/andrewmcodes/js-configs/blob/main/LICENSE">MIT License</a>
+        &copy; Andrew Mason
+      </footer>
+    </div>
+  </body>
+</html>
