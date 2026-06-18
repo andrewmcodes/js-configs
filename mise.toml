@@ -1,5 +1,8 @@
-[tools]
-node = "24.16.0"
+[settings]
+# Read the Node.js version from `.node-version` so it is the single source of
+# truth shared with `actions/setup-node` in CI. mise installs Node from
+# `.node-version`; no `[tools]` entry is needed for it.
+idiomatic_version_file_enable_tools = ["node"]
 
 [hooks]
 # Enable corepack on install so the pnpm version pinned in package.json
