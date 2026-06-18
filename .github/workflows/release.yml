@@ -18,10 +18,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
-      - name: Set up mise (Node.js)
-        uses: jdx/mise-action@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24.16.0"
 
       - name: Enable corepack
         run: corepack enable

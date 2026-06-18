@@ -17,12 +17,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
-      - name: Set up mise (Node.js)
-        uses: jdx/mise-action@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24.16.0"
 
       - name: Enable corepack
         run: corepack enable
@@ -44,3 +46,28 @@ jobs:
         run: |
           git fetch origin "${{ github.base_ref }}" --depth=1
           pnpm changeset status --since="origin/${{ github.base_ref }}"
+
+  commitlint:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24.16.0"
+
+      - name: Enable corepack
+        run: corepack enable
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint pull request commits
+        run: |
+          git fetch origin "${{ github.base_ref }}" --depth=1
+          pnpm commitlint --from "origin/${{ github.base_ref }}" --to "${{ github.event.pull_request.head.sha }}" --verbose
