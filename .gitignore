@@ -1,0 +1,15 @@
+node_modules/
+tmp/
+.DS_Store
+
+# Build / coverage artifacts
+dist/
+coverage/
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Package tarballs
+*.tgz
