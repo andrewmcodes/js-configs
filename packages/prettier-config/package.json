@@ -12,6 +12,7 @@
   },
   "bugs": "https://github.com/andrewmcodes/js-configs/issues",
   "main": "index.js",
+  "exports": "./index.js",
   "files": [
     "index.js",
     "prettier.config.js",
@@ -25,6 +26,9 @@
   ],
   "scripts": {
     "test": "node --test"
+  },
+  "peerDependencies": {
+    "prettier": ">=3.0.0"
   },
   "devDependencies": {
     "prettier": "catalog:"
