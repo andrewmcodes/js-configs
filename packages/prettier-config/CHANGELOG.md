@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.1.0
+
+### Minor Changes
+
+- d1a04d0: Migrate into the `js-configs` monorepo. Add an `exports` field and declare `prettier` (`>=3.0.0`) as a peer dependency to follow Prettier's shareable-config best practices. The config behavior is unchanged (`printWidth: 120`, `endOfLine: "auto"`).
+
 ## [2.0.0](https://github.com/andrewmcodes/prettier-config/compare/v1.0.0...v2.0.0) (2023-05-25)
 
 ### ⚠ BREAKING CHANGES
