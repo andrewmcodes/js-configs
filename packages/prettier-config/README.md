@@ -42,10 +42,11 @@ module.exports = {
 
 ## Configuration
 
-| Option       | Value    |
-| ------------ | -------- |
-| `printWidth` | `120`    |
-| `endOfLine`  | `"auto"` |
+| Option       | Value     |
+| ------------ | --------- |
+| `printWidth` | `120`     |
+| `endOfLine`  | `"auto"`  |
+| `proseWrap`  | `"never"` |
 
 ## Compatibility
 
