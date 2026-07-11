@@ -40,16 +40,16 @@ module.exports = {
 };
 ```
 
-## Compatibility
-
-Compatible with Prettier 3.
-
 ## Configuration
 
 | Option       | Project value | Default |
 | ------------ | ------------- | ------- |
 | `printWidth` | `120`         | `80`    |
 | `endOfLine`  | `"auto"`      | `"lf"`  |
+
+## Compatibility
+
+Compatible with Prettier 3.
 
 ## Contributing
 
