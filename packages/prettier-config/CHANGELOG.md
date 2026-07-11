@@ -1,5 +1,15 @@
 # Changelog
 
+## 3.0.0
+
+### Major Changes
+
+- 82e9a9d: feat: set `proseWrap` to `"never"` to prevent prose wrapping in Markdown
+
+### Patch Changes
+
+- 7de4e47: docs: add a Configuration section to each package README documenting the options/rules that override upstream defaults
+
 ## 2.1.0
 
 ### Minor Changes
