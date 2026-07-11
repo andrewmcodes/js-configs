@@ -11,6 +11,10 @@ test("config object sets endOfLine to auto", () => {
   assert.equal(config.endOfLine, "auto");
 });
 
+test("config object sets proseWrap to never", () => {
+  assert.equal(config.proseWrap, "never");
+});
+
 test("configuration formats code correctly", async () => {
   const sourceCode = "const x = { a:1, b:2, }";
   const formattedCode = await prettier.format(sourceCode, { ...config, parser: "babel" });
