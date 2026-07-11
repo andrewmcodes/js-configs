@@ -12,176 +12,310 @@
     <meta property="og:description" content="Shareable JavaScript and Node.js tooling configuration packages." />
     <meta property="og:image" content="assets/social-image.png" />
     <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#f4f4f2" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b0d10" media="(prefers-color-scheme: dark)" />
     <link
       rel="icon"
       href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>⚙️</text></svg>"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <style>
+      /* ---- Design tokens (Swiss / International Typographic) ---- */
       :root {
-        --bg: #ffffff;
-        --fg: #1b1f24;
-        --muted: #5b6470;
-        --border: #e3e8ef;
-        --card: #f7f9fc;
-        --accent: #176de3;
-        --code-bg: #0d1117;
-        --code-fg: #e6edf3;
-        --radius: 12px;
+        /* Spacing — 8px base scale */
+        --space-1: 0.25rem;
+        --space-2: 0.5rem;
+        --space-3: 0.75rem;
+        --space-4: 1rem;
+        --space-5: 1.5rem;
+        --space-6: 2rem;
+        --space-8: 3rem;
+        --space-10: 4rem;
+        --space-12: 5rem;
+
+        /* Type */
+        --font-display: "Space Grotesk", system-ui, sans-serif;
+        --font-body: "IBM Plex Sans", system-ui, sans-serif;
+        --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+        --radius: 4px;
+
+        /* Light theme */
+        --bg: #f4f4f2;
+        --surface: #ffffff;
+        --fg: #12151a;
+        --muted: #545b66;
+        --border: #d7d9d5;
+        --border-strong: #12151a;
+        --accent: #d81f2a;
+        --accent-fg: #ffffff;
+        --code-bg: #12151a;
+        --code-fg: #f4f4f2;
+        --shadow: 0 1px 2px rgba(18, 21, 26, 0.06);
       }
+
+      :root[data-theme="dark"] {
+        --bg: #0b0d10;
+        --surface: #14181d;
+        --fg: #ededea;
+        --muted: #9aa2ad;
+        --border: #262c33;
+        --border-strong: #ededea;
+        --accent: #ff5a5f;
+        --accent-fg: #0b0d10;
+        --code-bg: #05070a;
+        --code-fg: #ededea;
+        --shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+      }
+
       @media (prefers-color-scheme: dark) {
-        :root {
-          --bg: #0d1117;
-          --fg: #e6edf3;
-          --muted: #9aa4b2;
-          --border: #232b36;
-          --card: #161b22;
-          --accent: #4d9bff;
-          --code-bg: #010409;
-          --code-fg: #e6edf3;
+        :root:not([data-theme="light"]) {
+          --bg: #0b0d10;
+          --surface: #14181d;
+          --fg: #ededea;
+          --muted: #9aa2ad;
+          --border: #262c33;
+          --border-strong: #ededea;
+          --accent: #ff5a5f;
+          --accent-fg: #0b0d10;
+          --code-bg: #05070a;
+          --code-fg: #ededea;
+          --shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
         }
       }
+
       * {
         box-sizing: border-box;
+      }
+      html {
+        -webkit-text-size-adjust: 100%;
       }
       body {
         margin: 0;
         background: var(--bg);
         color: var(--fg);
-        font-family:
-          system-ui,
-          -apple-system,
-          "Segoe UI",
-          Roboto,
-          Helvetica,
-          Arial,
-          sans-serif;
-        line-height: 1.6;
+        font-family: var(--font-body);
+        font-size: 1rem; /* 16px min */
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
       }
       .wrap {
-        max-width: 880px;
+        max-width: 960px;
         margin: 0 auto;
-        padding: 0 20px 80px;
+        padding: 0 var(--space-4) var(--space-12);
       }
+
+      /* ---- Top bar ---- */
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-4);
+        padding: var(--space-4) 0;
+        border-bottom: 2px solid var(--border-strong);
+      }
+      .brand {
+        font-family: var(--font-mono);
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        font-size: 0.95rem;
+      }
+      .theme-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 44px;
+        min-height: 44px;
+        padding: 0 var(--space-3);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        background: var(--surface);
+        color: var(--fg);
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+        cursor: pointer;
+        transition: border-color 0.15s ease;
+      }
+      .theme-toggle:hover {
+        border-color: var(--accent);
+      }
+      .theme-toggle:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+
+      /* ---- Header ---- */
       header {
-        text-align: center;
-        padding: 56px 0 8px;
+        padding: var(--space-10) 0 var(--space-8);
+        border-bottom: 1px solid var(--border);
       }
       header img {
         max-width: 100%;
         height: auto;
         border-radius: var(--radius);
         border: 1px solid var(--border);
+        margin-bottom: var(--space-6);
       }
       h1 {
-        font-size: 2.4rem;
-        margin: 28px 0 8px;
-        letter-spacing: -0.02em;
+        font-family: var(--font-display);
+        font-size: clamp(2.75rem, 9vw, 5rem);
+        font-weight: 700;
+        line-height: 0.98;
+        letter-spacing: -0.03em;
+        margin: 0 0 var(--space-4);
       }
       .tagline {
         color: var(--muted);
-        font-size: 1.1rem;
-        margin: 0 auto 20px;
-        max-width: 620px;
+        font-size: 1.15rem;
+        margin: 0 0 var(--space-6);
+        max-width: 42ch;
       }
       .links {
         display: flex;
-        gap: 10px;
-        justify-content: center;
+        gap: var(--space-2);
         flex-wrap: wrap;
-        margin-bottom: 12px;
       }
       .links a {
         display: inline-flex;
         align-items: center;
-        gap: 6px;
-        padding: 8px 14px;
-        border: 1px solid var(--border);
-        border-radius: 999px;
+        min-height: 44px;
+        padding: var(--space-2) var(--space-4);
+        border: 1px solid var(--border-strong);
+        border-radius: var(--radius);
         color: var(--fg);
         text-decoration: none;
-        font-size: 0.92rem;
-        background: var(--card);
-        transition: border-color 0.15s ease;
+        font-family: var(--font-mono);
+        font-size: 0.85rem;
+        background: var(--surface);
+        transition:
+          background 0.15s ease,
+          color 0.15s ease;
       }
       .links a:hover {
+        background: var(--accent);
+        color: var(--accent-fg);
         border-color: var(--accent);
       }
+      .links a:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+
+      /* ---- Section headings ---- */
       h2 {
-        font-size: 1.5rem;
-        margin: 48px 0 6px;
-        letter-spacing: -0.01em;
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: var(--muted);
+        margin: var(--space-10) 0 var(--space-5);
+        padding-bottom: var(--space-3);
+        border-bottom: 1px solid var(--border);
       }
       a {
         color: var(--accent);
       }
+
+      /* ---- Cards grid ---- */
       .cards {
         display: grid;
-        gap: 20px;
+        gap: var(--space-5);
         grid-template-columns: 1fr;
       }
-      @media (min-width: 680px) {
+      @media (min-width: 720px) {
         .cards {
           grid-template-columns: 1fr 1fr;
         }
       }
       .card {
         border: 1px solid var(--border);
-        background: var(--card);
+        background: var(--surface);
         border-radius: var(--radius);
-        padding: 22px;
+        padding: var(--space-6);
+        box-shadow: var(--shadow);
       }
       .card h3 {
-        margin: 0 0 4px;
+        margin: 0 0 var(--space-3);
         font-size: 1.05rem;
-        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-family: var(--font-mono);
+        font-weight: 600;
+        word-break: break-word;
       }
       .card p {
         color: var(--muted);
-        margin: 0 0 16px;
+        margin: 0 0 var(--space-5);
         font-size: 0.95rem;
       }
       .badge {
         display: inline-block;
-        margin-bottom: 14px;
+        margin-bottom: var(--space-4);
+      }
+      .badge img {
+        display: block;
       }
       h4 {
-        font-size: 0.8rem;
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
         text-transform: uppercase;
-        letter-spacing: 0.06em;
+        letter-spacing: 0.12em;
         color: var(--muted);
-        margin: 18px 0 6px;
+        margin: var(--space-5) 0 var(--space-2);
       }
       pre {
         background: var(--code-bg);
         color: var(--code-fg);
-        padding: 14px 16px;
-        border-radius: 10px;
+        padding: var(--space-3) var(--space-4);
+        border-radius: var(--radius);
         overflow-x: auto;
         margin: 0;
-        font-size: 0.86rem;
+        font-size: 0.85rem;
       }
       code {
-        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-family: var(--font-mono);
       }
       p code {
-        background: var(--card);
+        background: var(--bg);
         border: 1px solid var(--border);
-        border-radius: 6px;
-        padding: 1px 6px;
+        border-radius: var(--radius);
+        padding: 0.1em 0.4em;
         font-size: 0.88em;
       }
+      main p {
+        max-width: 68ch;
+      }
+
       footer {
-        text-align: center;
         color: var(--muted);
-        font-size: 0.9rem;
-        margin-top: 64px;
-        padding-top: 24px;
-        border-top: 1px solid var(--border);
+        font-size: 0.85rem;
+        margin-top: var(--space-10);
+        padding-top: var(--space-5);
+        border-top: 2px solid var(--border-strong);
+        font-family: var(--font-mono);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          transition: none !important;
+          animation: none !important;
+        }
       }
     </style>
   </head>
   <body>
     <div class="wrap">
+      <div class="topbar">
+        <span class="brand">js-configs</span>
+        <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Toggle color theme">
+          <span id="theme-label">Theme</span>
+        </button>
+      </div>
+
       <header>
         <img src="assets/social-image.png" alt="js-configs" />
         <h1>js-configs</h1>
@@ -252,5 +386,37 @@
         &copy; Andrew Mason
       </footer>
     </div>
+
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var toggle = document.getElementById("theme-toggle");
+        var label = document.getElementById("theme-label");
+        var stored = null;
+        try {
+          stored = localStorage.getItem("theme");
+        } catch (e) {}
+        if (stored === "dark" || stored === "light") {
+          root.setAttribute("data-theme", stored);
+        }
+        function current() {
+          var attr = root.getAttribute("data-theme");
+          if (attr) return attr;
+          return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        function render() {
+          label.textContent = current() === "dark" ? "Light" : "Dark";
+        }
+        toggle.addEventListener("click", function () {
+          var next = current() === "dark" ? "light" : "dark";
+          root.setAttribute("data-theme", next);
+          try {
+            localStorage.setItem("theme", next);
+          } catch (e) {}
+          render();
+        });
+        render();
+      })();
+    </script>
   </body>
 </html>
