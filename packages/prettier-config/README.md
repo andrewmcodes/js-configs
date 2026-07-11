@@ -44,6 +44,13 @@ module.exports = {
 
 Compatible with Prettier 3.
 
+## Configuration
+
+| Option | Project value | Default |
+| --- | --- | --- |
+| `printWidth` | `120` | `80` |
+| `endOfLine` | `"auto"` | `"lf"` |
+
 ## Contributing
 
 I'd love your help refining this package. Please don't hesitate to send a pull request to the [`js-configs`](https://github.com/andrewmcodes/js-configs) monorepo.
