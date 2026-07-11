@@ -42,10 +42,10 @@ module.exports = {
 
 ## Configuration
 
-| Option       | Project value | Default |
-| ------------ | ------------- | ------- |
-| `printWidth` | `120`         | `80`    |
-| `endOfLine`  | `"auto"`      | `"lf"`  |
+| Option       | Value    |
+| ------------ | -------- |
+| `printWidth` | `120`    |
+| `endOfLine`  | `"auto"` |
 
 ## Compatibility
 
