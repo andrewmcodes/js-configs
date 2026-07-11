@@ -40,6 +40,13 @@ module.exports = {
 };
 ```
 
+## Configuration
+
+| Option       | Value    |
+| ------------ | -------- |
+| `printWidth` | `120`    |
+| `endOfLine`  | `"auto"` |
+
 ## Compatibility
 
 Compatible with Prettier 3.
