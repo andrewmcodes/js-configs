@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.1
+
+### Patch Changes
+
+- 7de4e47: docs: add a Configuration section to each package README documenting the options/rules that override upstream defaults
+
 ## 1.0.0
 
 ### Major Changes
