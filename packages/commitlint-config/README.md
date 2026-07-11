@@ -1,8 +1,6 @@
 # @andrewmcodes/commitlint-config
 
-[![npm](https://img.shields.io/npm/v/@andrewmcodes/commitlint-config)](https://www.npmjs.com/package/@andrewmcodes/commitlint-config)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
+[![npm](https://img.shields.io/npm/v/@andrewmcodes/commitlint-config)](https://www.npmjs.com/package/@andrewmcodes/commitlint-config) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
 
 This is a shareable [commitlint](https://commitlint.js.org/) configuration, which extends [`@commitlint/config-conventional`](https://www.npmjs.com/package/@commitlint/config-conventional) and disables the body and footer max line length rules.
 
@@ -34,20 +32,20 @@ module.exports = {
 
 This config extends `@commitlint/config-conventional`. The full effective rule set is listed below.
 
-| Rule                     | Value                                                                                                           |
-| ------------------------ | --------------------------------------------------------------------------------------------------------------- |
-| `body-leading-blank`     | `[1, "always"]`                                                                                                 |
-| `body-max-line-length`   | `[0]`                                                                                                           |
-| `footer-leading-blank`   | `[1, "always"]`                                                                                                 |
-| `footer-max-line-length` | `[0]`                                                                                                           |
-| `header-max-length`      | `[2, "always", 100]`                                                                                            |
-| `header-trim`            | `[2, "always"]`                                                                                                 |
-| `subject-case`           | `[2, "never", ["sentence-case", "start-case", "pascal-case", "upper-case"]]`                                    |
-| `subject-empty`          | `[2, "never"]`                                                                                                  |
-| `subject-full-stop`      | `[2, "never", "."]`                                                                                             |
-| `type-case`              | `[2, "always", "lower-case"]`                                                                                   |
-| `type-empty`             | `[2, "never"]`                                                                                                  |
-| `type-enum`              | `[2, "always", ["build", "chore", "ci", "docs", "feat", "fix", "perf", "refactor", "revert", "style", "test"]]` |
+| Rule | Value |
+| --- | --- |
+| `body-leading-blank` | `[1, "always"]` |
+| `body-max-line-length` | `[0]` |
+| `footer-leading-blank` | `[1, "always"]` |
+| `footer-max-line-length` | `[0]` |
+| `header-max-length` | `[2, "always", 100]` |
+| `header-trim` | `[2, "always"]` |
+| `subject-case` | `[2, "never", ["sentence-case", "start-case", "pascal-case", "upper-case"]]` |
+| `subject-empty` | `[2, "never"]` |
+| `subject-full-stop` | `[2, "never", "."]` |
+| `type-case` | `[2, "always", "lower-case"]` |
+| `type-empty` | `[2, "never"]` |
+| `type-enum` | `[2, "always", ["build", "chore", "ci", "docs", "feat", "fix", "perf", "refactor", "revert", "style", "test"]]` |
 
 ## Compatibility
 
