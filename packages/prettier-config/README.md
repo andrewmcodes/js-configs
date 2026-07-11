@@ -46,10 +46,10 @@ Compatible with Prettier 3.
 
 ## Configuration
 
-| Option | Project value | Default |
-| --- | --- | --- |
-| `printWidth` | `120` | `80` |
-| `endOfLine` | `"auto"` | `"lf"` |
+| Option       | Project value | Default |
+| ------------ | ------------- | ------- |
+| `printWidth` | `120`         | `80`    |
+| `endOfLine`  | `"auto"`      | `"lf"`  |
 
 ## Contributing
 
