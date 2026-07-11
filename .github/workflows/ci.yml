@@ -21,25 +21,27 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Enable corepack
+        run: corepack enable
+
       - name: Set up Node.js
         uses: actions/setup-node@v6
         with:
           node-version-file: ".node-version"
-
-      - name: Enable corepack
-        run: corepack enable
+          cache: pnpm
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Lint
-        run: pnpm lint
+      - parallel:
+          - name: Lint
+            run: pnpm lint
 
-      - name: Test
-        run: pnpm test
+          - name: Test
+            run: pnpm test
 
-      - name: Check formatting
-        run: pnpm format:check
+          - name: Check formatting
+            run: pnpm format:check
 
       - name: Changeset status
         if: github.event_name == 'pull_request'
@@ -56,13 +58,14 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Enable corepack
+        run: corepack enable
+
       - name: Set up Node.js
         uses: actions/setup-node@v6
         with:
           node-version-file: ".node-version"
-
-      - name: Enable corepack
-        run: corepack enable
+          cache: pnpm
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
