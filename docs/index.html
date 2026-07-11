@@ -12,8 +12,8 @@
     <meta property="og:description" content="Shareable JavaScript and Node.js tooling configuration packages." />
     <meta property="og:image" content="assets/social-image.png" />
     <meta property="og:type" content="website" />
-    <meta name="theme-color" content="#f4f4f2" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0b0d10" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f9f9f8" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#191918" media="(prefers-color-scheme: dark)" />
     <link
       rel="icon"
       href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>⚙️</text></svg>"
@@ -25,7 +25,12 @@
       rel="stylesheet"
     />
     <style>
-      /* ---- Design tokens (Swiss / International Typographic) ---- */
+      /* ============================================================
+         Design tokens — Radix Colors (Sand neutral + Yellow accent)
+         Steps follow Radix semantics:
+           1 app bg · 2 subtle bg · 3 ui bg · 6 subtle border
+           7 ui border · 9 solid · 10 solid hover · 11 text · 12 hi-contrast text
+         ============================================================ */
       :root {
         /* Spacing — 8px base scale */
         --space-1: 0.25rem;
@@ -43,49 +48,77 @@
         --font-body: "IBM Plex Sans", system-ui, sans-serif;
         --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
-        --radius: 4px;
+        --radius: 10px;
+        --radius-sm: 6px;
 
-        /* Light theme */
-        --bg: #f4f4f2;
-        --surface: #ffffff;
-        --fg: #12151a;
-        --muted: #545b66;
-        --border: #d7d9d5;
-        --border-strong: #12151a;
-        --accent: #d81f2a;
-        --accent-fg: #ffffff;
-        --code-bg: #12151a;
-        --code-fg: #f4f4f2;
-        --shadow: 0 1px 2px rgba(18, 21, 26, 0.06);
+        /* Light — sand + yellow */
+        --bg: #f9f9f8; /* sand-2  */
+        --surface: #fdfdfc; /* sand-1  */
+        --fg: #21201c; /* sand-12 */
+        --muted: #63635e; /* sand-11 */
+        --border: #dad9d6; /* sand-6  */
+        --border-hover: #cfceca; /* sand-7  */
+
+        --accent-solid: #ffe629; /* yellow-9  */
+        --accent-solid-hover: #ffdc00; /* yellow-10 */
+        --accent-text: #9e6c00; /* yellow-11 (accessible) */
+        --accent-border: #e4c767; /* yellow-7  */
+        --accent-bg: #fffab8; /* yellow-3  */
+        --accent-bg-hover: #fff394; /* yellow-4  */
+        --on-accent: #21201c; /* dark text on yellow */
+
+        --code-bg: #21201c; /* sand-12 */
+        --code-fg: #f1f0ef; /* sand-3  */
+        --inline-bg: #f1f0ef; /* sand-3  */
+
+        --shadow: 0 1px 2px rgba(33, 32, 28, 0.04), 0 4px 12px rgba(33, 32, 28, 0.05);
       }
 
       :root[data-theme="dark"] {
-        --bg: #0b0d10;
-        --surface: #14181d;
-        --fg: #ededea;
-        --muted: #9aa2ad;
-        --border: #262c33;
-        --border-strong: #ededea;
-        --accent: #ff5a5f;
-        --accent-fg: #0b0d10;
-        --code-bg: #05070a;
-        --code-fg: #ededea;
-        --shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+        --bg: #191918; /* sandDark-2  */
+        --surface: #222221; /* sandDark-3  */
+        --fg: #eeeeec; /* sandDark-12 */
+        --muted: #b5b3ad; /* sandDark-11 */
+        --border: #3b3a37; /* sandDark-6  */
+        --border-hover: #494844; /* sandDark-7  */
+
+        --accent-solid: #ffe629; /* yellowDark-9  */
+        --accent-solid-hover: #ffff57; /* yellowDark-10 */
+        --accent-text: #f5e147; /* yellowDark-11 */
+        --accent-border: #665417; /* yellowDark-7  */
+        --accent-bg: #2d2305; /* yellowDark-3  */
+        --accent-bg-hover: #362b00; /* yellowDark-4  */
+        --on-accent: #21201c;
+
+        --code-bg: #111110; /* sandDark-1  */
+        --code-fg: #eeeeec; /* sandDark-12 */
+        --inline-bg: #222221; /* sandDark-3  */
+
+        --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 6px 16px rgba(0, 0, 0, 0.4);
       }
 
       @media (prefers-color-scheme: dark) {
         :root:not([data-theme="light"]) {
-          --bg: #0b0d10;
-          --surface: #14181d;
-          --fg: #ededea;
-          --muted: #9aa2ad;
-          --border: #262c33;
-          --border-strong: #ededea;
-          --accent: #ff5a5f;
-          --accent-fg: #0b0d10;
-          --code-bg: #05070a;
-          --code-fg: #ededea;
-          --shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+          --bg: #191918;
+          --surface: #222221;
+          --fg: #eeeeec;
+          --muted: #b5b3ad;
+          --border: #3b3a37;
+          --border-hover: #494844;
+
+          --accent-solid: #ffe629;
+          --accent-solid-hover: #ffff57;
+          --accent-text: #f5e147;
+          --accent-border: #665417;
+          --accent-bg: #2d2305;
+          --accent-bg-hover: #362b00;
+          --on-accent: #21201c;
+
+          --code-bg: #111110;
+          --code-fg: #eeeeec;
+          --inline-bg: #222221;
+
+          --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 6px 16px rgba(0, 0, 0, 0.4);
         }
       }
 
@@ -105,9 +138,29 @@
         -webkit-font-smoothing: antialiased;
       }
       .wrap {
-        max-width: 960px;
+        max-width: 1120px;
         margin: 0 auto;
-        padding: 0 var(--space-4) var(--space-12);
+        padding: 0 var(--space-5) var(--space-12);
+      }
+
+      /* Links — Radix accent step-11 text with a subtle underline */
+      a {
+        color: var(--accent-text);
+        text-decoration: underline;
+        text-decoration-color: var(--accent-border);
+        text-decoration-thickness: 1.5px;
+        text-underline-offset: 3px;
+        transition:
+          text-decoration-color 0.12s ease,
+          color 0.12s ease;
+      }
+      a:hover {
+        text-decoration-color: var(--accent-solid);
+      }
+      a:focus-visible {
+        outline: 2px solid var(--accent-solid);
+        outline-offset: 2px;
+        border-radius: 3px;
       }
 
       /* ---- Top bar ---- */
@@ -117,93 +170,112 @@
         justify-content: space-between;
         gap: var(--space-4);
         padding: var(--space-4) 0;
-        border-bottom: 2px solid var(--border-strong);
+        border-bottom: 1px solid var(--border);
       }
       .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-2);
         font-family: var(--font-mono);
         font-weight: 600;
         letter-spacing: -0.01em;
         font-size: 0.95rem;
+        color: var(--fg);
       }
-      .theme-toggle {
+      .brand::before {
+        content: "";
+        width: 0.7rem;
+        height: 0.7rem;
+        background: var(--accent-solid);
+        border-radius: 3px;
+      }
+
+      /* ---- Buttons ---- */
+      .btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        min-width: 44px;
         min-height: 44px;
-        padding: 0 var(--space-3);
+        padding: 0 var(--space-4);
         border: 1px solid var(--border);
-        border-radius: var(--radius);
+        border-radius: var(--radius-sm);
         background: var(--surface);
         color: var(--fg);
+        text-decoration: none;
         font-family: var(--font-mono);
-        font-size: 0.8rem;
+        font-size: 0.85rem;
         cursor: pointer;
-        transition: border-color 0.15s ease;
+        transition:
+          background 0.15s ease,
+          border-color 0.15s ease,
+          color 0.15s ease;
       }
-      .theme-toggle:hover {
-        border-color: var(--accent);
+      .btn:hover {
+        background: var(--accent-bg);
+        border-color: var(--accent-border);
+        color: var(--accent-text);
       }
-      .theme-toggle:focus-visible {
-        outline: 2px solid var(--accent);
+      .btn:focus-visible {
+        outline: 2px solid var(--accent-solid);
         outline-offset: 2px;
       }
 
-      /* ---- Header ---- */
-      header {
+      /* ---- Hero ---- */
+      .hero {
+        display: grid;
+        gap: var(--space-8);
+        align-items: center;
         padding: var(--space-10) 0 var(--space-8);
         border-bottom: 1px solid var(--border);
       }
-      header img {
-        max-width: 100%;
-        height: auto;
-        border-radius: var(--radius);
-        border: 1px solid var(--border);
-        margin-bottom: var(--space-6);
+      @media (min-width: 860px) {
+        .hero {
+          grid-template-columns: 1.05fr 0.95fr;
+          gap: var(--space-10);
+        }
+      }
+      .eyebrow {
+        display: inline-block;
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: var(--accent-text);
+        margin: 0 0 var(--space-4);
       }
       h1 {
         font-family: var(--font-display);
-        font-size: clamp(2.75rem, 9vw, 5rem);
+        font-size: clamp(2.75rem, 7vw, 4.25rem);
         font-weight: 700;
         line-height: 0.98;
         letter-spacing: -0.03em;
         margin: 0 0 var(--space-4);
+        color: var(--fg);
       }
       .tagline {
         color: var(--muted);
         font-size: 1.15rem;
         margin: 0 0 var(--space-6);
-        max-width: 42ch;
+        max-width: 46ch;
       }
       .links {
         display: flex;
-        gap: var(--space-2);
+        gap: var(--space-3);
         flex-wrap: wrap;
       }
-      .links a {
-        display: inline-flex;
-        align-items: center;
-        min-height: 44px;
-        padding: var(--space-2) var(--space-4);
-        border: 1px solid var(--border-strong);
+      .hero-media {
+        margin: 0;
+        border: 1px solid var(--border);
         border-radius: var(--radius);
-        color: var(--fg);
-        text-decoration: none;
-        font-family: var(--font-mono);
-        font-size: 0.85rem;
-        background: var(--surface);
-        transition:
-          background 0.15s ease,
-          color 0.15s ease;
+        overflow: hidden;
+        line-height: 0;
+        box-shadow: var(--shadow);
       }
-      .links a:hover {
-        background: var(--accent);
-        color: var(--accent-fg);
-        border-color: var(--accent);
-      }
-      .links a:focus-visible {
-        outline: 2px solid var(--accent);
-        outline-offset: 2px;
+      .hero-media img {
+        display: block;
+        width: 100%;
+        height: auto;
       }
 
       /* ---- Section headings ---- */
@@ -218,9 +290,6 @@
         padding-bottom: var(--space-3);
         border-bottom: 1px solid var(--border);
       }
-      a {
-        color: var(--accent);
-      }
 
       /* ---- Cards grid ---- */
       .cards {
@@ -234,17 +303,31 @@
         }
       }
       .card {
+        position: relative;
         border: 1px solid var(--border);
         background: var(--surface);
         border-radius: var(--radius);
         padding: var(--space-6);
         box-shadow: var(--shadow);
+        overflow: hidden;
+        transition: border-color 0.15s ease;
+      }
+      .card:hover {
+        border-color: var(--border-hover);
+      }
+      .card::before {
+        content: "";
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 3px;
+        background: var(--accent-solid);
       }
       .card h3 {
         margin: 0 0 var(--space-3);
         font-size: 1.05rem;
         font-family: var(--font-mono);
         font-weight: 600;
+        color: var(--fg);
         word-break: break-word;
       }
       .card p {
@@ -255,6 +338,7 @@
       .badge {
         display: inline-block;
         margin-bottom: var(--space-4);
+        text-decoration: none;
       }
       .badge img {
         display: block;
@@ -271,7 +355,7 @@
         background: var(--code-bg);
         color: var(--code-fg);
         padding: var(--space-3) var(--space-4);
-        border-radius: var(--radius);
+        border-radius: var(--radius-sm);
         overflow-x: auto;
         margin: 0;
         font-size: 0.85rem;
@@ -280,11 +364,12 @@
         font-family: var(--font-mono);
       }
       p code {
-        background: var(--bg);
+        background: var(--inline-bg);
         border: 1px solid var(--border);
-        border-radius: var(--radius);
+        border-radius: var(--radius-sm);
         padding: 0.1em 0.4em;
         font-size: 0.88em;
+        color: var(--fg);
       }
       main p {
         max-width: 68ch;
@@ -295,7 +380,7 @@
         font-size: 0.85rem;
         margin-top: var(--space-10);
         padding-top: var(--space-5);
-        border-top: 2px solid var(--border-strong);
+        border-top: 1px solid var(--border);
         font-family: var(--font-mono);
       }
 
@@ -311,24 +396,32 @@
     <div class="wrap">
       <div class="topbar">
         <span class="brand">js-configs</span>
-        <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Toggle color theme">
+        <button class="btn theme-toggle" type="button" id="theme-toggle" aria-label="Toggle color theme">
           <span id="theme-label">Theme</span>
         </button>
       </div>
 
-      <header>
-        <img src="assets/social-image.png" alt="js-configs" />
-        <h1>js-configs</h1>
-        <p class="tagline">
-          Shareable JavaScript and Node.js tooling configuration packages by
-          <a href="https://github.com/andrewmcodes">Andrew Mason</a>. A lightweight pnpm + Changesets monorepo.
-        </p>
-        <div class="links">
-          <a href="https://andrewm.codes">andrewm.codes</a>
-          <a href="https://github.com/andrewmcodes/js-configs">GitHub</a>
-          <a href="https://www.npmjs.com/org/andrewmcodes">npm</a>
-          <a href="https://github.com/andrewmcodes/js-configs/blob/main/AGENTS.md">Repo rules</a>
+      <header class="hero">
+        <div class="hero-text">
+          <span class="eyebrow">JavaScript · Node.js tooling</span>
+          <h1>js-configs</h1>
+          <p class="tagline">
+            Shareable JavaScript and Node.js tooling configuration packages by
+            <a href="https://github.com/andrewmcodes">Andrew Mason</a>. A lightweight pnpm + Changesets monorepo.
+          </p>
+          <div class="links">
+            <a class="btn" href="https://andrewm.codes">andrewm.codes</a>
+            <a class="btn" href="https://github.com/andrewmcodes/js-configs">GitHub</a>
+            <a class="btn" href="https://www.npmjs.com/org/andrewmcodes">npm</a>
+            <a class="btn" href="https://github.com/andrewmcodes/js-configs/blob/main/AGENTS.md">Repo rules</a>
+          </div>
         </div>
+        <figure class="hero-media">
+          <img
+            src="assets/social-image.png"
+            alt="js-configs — shareable JavaScript and Node.js tooling configurations"
+          />
+        </figure>
       </header>
 
       <main>
