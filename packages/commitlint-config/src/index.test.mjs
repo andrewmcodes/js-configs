@@ -8,6 +8,9 @@ import config from "./index.js";
 // `extends`, with our overrides merged on top.
 const rules = { ...conventional.rules, ...config.rules };
 
+// Mirror how commitlint applies our `ignores` alongside its default ignores.
+const opts = { defaultIgnores: true, ignores: config.ignores };
+
 test("accepts a valid commit", async () => {
   const { valid } = await lint("feat: a valid commit message", rules);
   assert.equal(valid, true);
@@ -37,4 +40,14 @@ test("accepts a commit with a long footer", async () => {
     rules,
   );
   assert.equal(valid, true);
+});
+
+test("ignores a merge commit with a custom subject", async () => {
+  const { valid } = await lint("Merge origin/main and resolve docs conflicts", rules, opts);
+  assert.equal(valid, true);
+});
+
+test("still rejects a non-merge invalid commit with ignores applied", async () => {
+  const { valid } = await lint("invalid: an invalid commit message", rules, opts);
+  assert.equal(valid, false);
 });
