@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.0
+
+### Minor Changes
+
+- 42d759b: Ignore merge commits with custom subjects (any message starting with `Merge `) that don't match commitlint's built-in merge patterns.
+
 ## 1.0.1
 
 ### Patch Changes
