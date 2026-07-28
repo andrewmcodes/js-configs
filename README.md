@@ -9,6 +9,7 @@
   <a href="https://github.com/andrewmcodes/js-configs/actions/workflows/ci.yml"><img src="https://github.com/andrewmcodes/js-configs/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
   <a href="https://www.npmjs.com/package/@andrewmcodes/prettier-config"><img src="https://img.shields.io/npm/v/@andrewmcodes/prettier-config?label=%40andrewmcodes%2Fprettier-config" alt="@andrewmcodes/prettier-config on npm" /></a>
   <a href="https://www.npmjs.com/package/@andrewmcodes/commitlint-config"><img src="https://img.shields.io/npm/v/@andrewmcodes/commitlint-config?label=%40andrewmcodes%2Fcommitlint-config" alt="@andrewmcodes/commitlint-config on npm" /></a>
+  <a href="https://www.npmjs.com/package/@andrewmcodes/tsconfig"><img src="https://img.shields.io/npm/v/@andrewmcodes/tsconfig?label=%40andrewmcodes%2Ftsconfig" alt="@andrewmcodes/tsconfig on npm" /></a>
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT" /></a>
   <a href="https://github.com/changesets/changesets"><img src="https://img.shields.io/badge/maintained%20with-changesets-176de3.svg" alt="Maintained with Changesets" /></a>
 </p>
@@ -23,6 +24,7 @@ This is a lightweight [pnpm workspace](https://pnpm.io/workspaces) monorepo. Eac
 | --- | --- |
 | [`@andrewmcodes/prettier-config`](./packages/prettier-config) | Shareable [Prettier](https://prettier.io/) configuration. |
 | [`@andrewmcodes/commitlint-config`](./packages/commitlint-config) | Shareable [commitlint](https://commitlint.js.org/) configuration. |
+| [`@andrewmcodes/tsconfig`](./packages/tsconfig) | Shareable [TypeScript](https://www.typescriptlang.org/) configurations. |
 
 ## Development
 
