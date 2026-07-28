@@ -1,0 +1,50 @@
+{
+  "name": "@andrewmcodes/tsconfig",
+  "version": "0.0.0",
+  "description": "Personal TypeScript configs for @andrewmcodes",
+  "license": "MIT",
+  "author": "Andrew Mason (https://andrewm.codes)",
+  "homepage": "https://github.com/andrewmcodes/js-configs/tree/main/packages/tsconfig#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewmcodes/js-configs.git",
+    "directory": "packages/tsconfig"
+  },
+  "bugs": "https://github.com/andrewmcodes/js-configs/issues",
+  "exports": {
+    ".": "./base.json",
+    "./base.json": "./base.json",
+    "./dom.json": "./dom.json",
+    "./node.json": "./node.json",
+    "./react.json": "./react.json"
+  },
+  "files": [
+    "base.json",
+    "dom.json",
+    "node.json",
+    "react.json",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "keywords": [
+    "andrewmcodes",
+    "config",
+    "tsconfig",
+    "typescript"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "peerDependencies": {
+    "typescript": ">=5.8.0"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "typescript": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

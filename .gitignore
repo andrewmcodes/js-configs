@@ -13,3 +13,7 @@ pnpm-debug.log*
 
 # Package tarballs
 *.tgz
+
+# Throwaway projects created by the tsconfig tests; normally cleaned up on exit,
+# but left behind if a test run is interrupted.
+.fixture-*/
