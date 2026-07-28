@@ -106,7 +106,7 @@ To combine configs, `extends` also accepts an array, where later entries win:
 | `skipLibCheck` | `true` | Skips type checking of `.d.ts` files, which is a large build-time win and rarely finds your bugs. |
 | `noEmit` | `true` | Type check only. See [Emitting output](#emitting-output). |
 
-`noUnusedLocals` and `noUnusedParameters` are deliberately left off. ESLint already reports unused variables, with an escape hatch for names prefixed with `_`, and having both tools flag the same thing is just noise.
+`noUnusedLocals` and `noUnusedParameters` are deliberately left off — [`@andrewmcodes/eslint-config`](../eslint-config) reports unused variables, with an escape hatch for names prefixed with `_`, and having both tools flag the same thing is just noise.
 
 ### dom.json
 
