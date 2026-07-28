@@ -1,0 +1,68 @@
+{
+  "name": "@andrewmcodes/eslint-config",
+  "version": "0.0.0",
+  "description": "Personal ESLint flat configs for @andrewmcodes",
+  "license": "MIT",
+  "author": "Andrew Mason (https://andrewm.codes)",
+  "homepage": "https://github.com/andrewmcodes/js-configs/tree/main/packages/eslint-config#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewmcodes/js-configs.git",
+    "directory": "packages/eslint-config"
+  },
+  "bugs": "https://github.com/andrewmcodes/js-configs/issues",
+  "type": "module",
+  "exports": {
+    ".": "./src/base.js",
+    "./browser": "./src/browser.js",
+    "./node": "./src/node.js",
+    "./obsidian": "./src/obsidian.js"
+  },
+  "files": [
+    "src/base.js",
+    "src/browser.js",
+    "src/node.js",
+    "src/obsidian.js",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "keywords": [
+    "andrewmcodes",
+    "config",
+    "eslint",
+    "eslint-config",
+    "eslintconfig"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@eslint/js": "catalog:",
+    "globals": "catalog:",
+    "typescript-eslint": "catalog:"
+  },
+  "peerDependencies": {
+    "eslint": "^10.0.0",
+    "eslint-plugin-obsidianmd": "^0.4.0",
+    "typescript": ">=5.0.0 <6.1.0"
+  },
+  "peerDependenciesMeta": {
+    "eslint-plugin-obsidianmd": {
+      "optional": true
+    },
+    "typescript": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "eslint": "catalog:",
+    "eslint-plugin-obsidianmd": "catalog:",
+    "typescript": "catalog:typescript-eslint-compatible"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

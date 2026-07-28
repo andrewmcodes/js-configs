@@ -1,0 +1,9 @@
+{
+  "id": "sample-plugin",
+  "name": "Sample Plugin",
+  "version": "1.0.0",
+  "minAppVersion": "1.8.0",
+  "description": "A minimal plugin layout used to exercise the obsidian config.",
+  "author": "Andrew Mason",
+  "isDesktopOnly": false
+}

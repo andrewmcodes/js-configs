@@ -9,3 +9,15 @@ catalog:
   "@commitlint/config-conventional": ^21
   "@commitlint/lint": ^21
   typescript: ^7
+  eslint: ^10
+  "@eslint/js": ^10
+  typescript-eslint: ^8
+  globals: ^17
+  eslint-plugin-obsidianmd: ^0.4
+
+catalogs:
+  # typescript-eslint throws on import when it can resolve TypeScript 7, so
+  # anything built on it has to stay on 6 until that support lands.
+  # See https://github.com/typescript-eslint/typescript-eslint/issues/10940
+  typescript-eslint-compatible:
+    typescript: ^6.0.3
