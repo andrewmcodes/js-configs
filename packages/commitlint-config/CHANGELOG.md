@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.1
+
+### Patch Changes
+
+- 1ccf1ec: Ignore commit messages that trim to `Initial plan`.
+
 ## 1.1.0
 
 ### Minor Changes
