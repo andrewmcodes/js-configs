@@ -16,7 +16,7 @@ const config = {
   rules: rules,
   // Skip merge commits with custom subjects (e.g. "Merge origin/main and
   // resolve conflicts") that don't match commitlint's built-in merge patterns.
-  ignores: [(message) => message.startsWith("Merge ")],
+  ignores: [(message) => message.startsWith("Merge "), (message) => message.trim() === "Initial plan"],
 };
 
 module.exports = config;
