@@ -47,6 +47,16 @@ test("ignores a merge commit with a custom subject", async () => {
   assert.equal(valid, true);
 });
 
+test("ignores the initial plan commit", async () => {
+  const { valid } = await lint("Initial plan", rules, opts);
+  assert.equal(valid, true);
+});
+
+test("ignores the initial plan commit with surrounding whitespace", async () => {
+  const { valid } = await lint("  Initial plan  ", rules, opts);
+  assert.equal(valid, true);
+});
+
 test("still rejects a non-merge invalid commit with ignores applied", async () => {
   const { valid } = await lint("invalid: an invalid commit message", rules, opts);
   assert.equal(valid, false);
